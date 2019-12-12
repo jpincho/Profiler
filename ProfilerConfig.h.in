@@ -1,0 +1,2 @@
+#pragma once
+#cmakedefine PROFILER_IMGUI_WINDOW
