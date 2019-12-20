@@ -30,7 +30,7 @@ void Start ( const std::string SectionName )
     // Nope, need to create and add child
     if ( SectionToUse == nullptr )
         {
-        CurrentSection->AddChild ( SectionName );
+        SectionToUse = CurrentSection->AddChild ( SectionName );
         }
 
     SectionToUse->Start();

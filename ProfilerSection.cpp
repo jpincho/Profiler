@@ -52,13 +52,15 @@ void ProfilerSection::Close ( void )
     Min = std::min ( LastDuration, Min );
     Max = std::max ( LastDuration, Max );
     AccumulatedDuration += LastDuration;
-    Parent->ChildrenTime += LastDuration;
+    if ( Parent )
+        Parent->ChildrenTime += LastDuration;
     ++Count;
 
     FrameMin = std::min ( LastDuration, FrameMin );
     FrameMax = std::max ( LastDuration, FrameMax );
     FrameAccumulatedDuration += LastDuration;
-    Parent->FrameChildrenTime += LastDuration;
+    if ( Parent )
+        Parent->FrameChildrenTime += LastDuration;
     ++FrameCount;
     }
 
